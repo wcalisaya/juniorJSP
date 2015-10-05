@@ -45,8 +45,10 @@
                     <td><%=rs.getString("nombre")%></td>
                     <td><%=rs.getString("cargo")%></td>
                     <td><%=rs.getString("username")%></td>  
-                    <td><a href="edit.jsp?idG=<%=rs.getString("id")%>&txtname=<%=rs.getString("nombre")%>&txtcargo=<%=rs.getString("cargo")%>">Edit</a></td>
-                    <td><a href="jsp/dao/guilleDao.jsp?accion=eliminar&idG=<%=rs.getString("id")%>">Delet</a></td>
+                    <td><a href="edit.jsp?idG=<%=rs.getString("id")%>">Edit</a></td>
+                    <td><a href="jsp/dao/guilleDao.jsp?accion=eliminar&idG=<%=rs.getString("id")%>"
+                           onclick="return confirm('¿Estas seguro de ELIMINAR?');">Delet</a>
+                    </td>
                 </tr>
                 <%}%>
             </table>
