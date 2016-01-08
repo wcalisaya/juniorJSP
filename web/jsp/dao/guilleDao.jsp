@@ -7,21 +7,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../admin/conexion.jsp" %>
 <%@include file="Model.jsp" %>
-
 <%    if (accion.equals("guardar")) {
-        consulta = ("insert into guille (nombre, cargo, username, pass ) "
-                + "values(?,?,?,?)");
-        ps = conex.prepareStatement(consulta);
-        ps.setString(1, nombre);
-        ps.setString(2, cargo);
-        ps.setString(3, user);
-        ps.setString(4, pass);
 
-        if (ps.executeUpdate() == 1) {
-            response.sendRedirect("../../index.jsp");
-        } else {
-            out.print("no se pudo insertar");
-        }
+            consulta = ("insert into guille (nombre, cargo, username, pass ) "
+                    + "values(?,?,?,?)");
+            ps = conex.prepareStatement(consulta);
+            ps.setString(1, nombre);
+            ps.setString(2, cargo);
+            ps.setString(3, user);
+            ps.setString(4, pass);
+            if (ps.executeUpdate() == 1) {
+                out.print("exito");
+                //response.sendRedirect("../../index.jsp");
+            } else {
+                out.print("no se pudo insertar");
+            }
     } else {
         if (accion.equals("eliminar")) {
 
@@ -50,6 +50,6 @@
                 }
             }
         }
-}
+    }
 
 %>

@@ -11,7 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="resources/style.css">
+        <link rel="stylesheet" href="resources/css/style.css">
+        
     </head>
     <body>
         <%            
@@ -21,25 +22,32 @@
         %>
         <div class="principal">
             <h2>GUILLERMO</h2>
-            <form action="jsp/dao/guilleDao.jsp" method="POST">
-                <input type="text" name="txtname" placeholder="nombre" required=""/><br>
-                <input type="text" name="txtcargo" placeholder="cargo" required=""/><br>
-                <input type="text" name="txtuser" placeholder="username"/><br>
-                <input type="password" name="txtpass" placeholder="pass"/><br>
+            <form id="form">
+                <input type="text" id="txtname" name="name" placeholder="nombre" required=""/><br>
+                <input type="text" id="txtcargo" name="txtcargo" placeholder="cargo" required=""/><br>
+                <input type="text" id="txtuser" name="txtuser" placeholder="username"/><br>
+                <input type="password" id="txtpass" name="txtpass" placeholder="pass"/><br>
 
-                <input type="hidden" name="accion" value="guardar">
-                <input type="submit" name="Add" value="Agregar">
-            </form>    
+                <input type="hidden" id="accion" value="guardar">
+                <input type="button" name="Add" value="Agregar" onclick="postAdd();">
+            </form>
+            <div style="display:none;" id="exito">
+                <p>Se inserto OK.</p>
+            </div>
         </div>
         <br>
-        <div class="listado">
+        <input type="text" name="">
+        <br>
+        <br>
+        <div class="listado" id="lista">
             <table>
                 <tr class="cabecera">
                     <th>Nombre</th>    
                     <th>Cargo</th>    
                     <th>username</th>
                     <th>OPT</th>
-                </tr>            
+                </tr>   
+                <div id="mostrar"></div>
                 <% while (rs.next()) {%>
                 <tr>
                     <td><%=rs.getString("nombre")%></td>
@@ -53,6 +61,12 @@
                 <%}%>
             </table>
         </div>
-
+            
+            
+            
+            
+            
+            <script src="resources/js/jquery-1.11.2.js"></script>
+            <script src="resources/js/ajax.js"></script>
     </body>
 </html>
