@@ -26,8 +26,8 @@
         <%if (rs.next()){
         %>    
             <form action="jsp/dao/guilleDao.jsp" method="POST">
-                <input type="text" name="txtname" value="<%=rs.getString("nombre")%>"/><br>
-                <input type="text" name="txtcargo" value="<%=rs.getString("cargo") %>" /><br>
+                <input type="text" name="nombre" value="<%=rs.getString("nombre")%>"/><br>
+                <input type="text" name="cargo" value="<%=rs.getString("cargo") %>" /><br>
                 <input type="hidden" name="accion" value="actualizar">
                 <%}%> 
                  <input type="hidden" name="idG" value="<%=rs.getString("id")%>">

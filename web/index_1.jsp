@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="jsp/admin/con  exion.jsp" %>
+<%@include file="jsp/admin/conexion.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
